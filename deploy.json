@@ -1,0 +1,26 @@
+{
+  "name": "Jane Premium Menu Worker",
+  "description": "A Cloudflare Worker that proxies requests to Jane Premium with client IP forwarding and authentication headers.",
+  "repository": "https://github.com/evansoderberg/premium-worker-template",
+  "envVars": [
+    {
+      "name": "JANE_API_URL",
+      "type": "string",
+      "label": "Jane API URL",
+      "required": true,
+      "enum": [
+        "https://bloom.iheartjane.com/",
+        "https://demo-bloom.nonprod-iheartjane.com/",
+        "https://staging-bloom.nonprod-iheartjane.com/",
+        "https://edge-bloom.nonprod-iheartjane.com/",
+        "https://edge2-bloom.nonprod-iheartjane.com/"
+      ]
+    }
+  ],
+  "routes": [
+    {
+      "pattern": "example.com/*"
+    }
+  ],
+  "postDeployMessage": "Almost done! Please go to:\nWorkers → jane-premium-worker → Settings → Variables & Secrets → Add Secret.\nName the secret MENU_TOKEN and enter your Menu Token.\n\nYour proxy will begin working after this step."
+}

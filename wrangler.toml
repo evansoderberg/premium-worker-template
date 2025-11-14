@@ -1,0 +1,8 @@
+name = "jane-premium-worker"
+main = "src/worker.js"
+compatibility_date = "2025-11-13"
+
+[vars]
+# Public config provided during deploy
+JANE_API_URL = ""
+WORKER_VERSION = "0.0.1"
